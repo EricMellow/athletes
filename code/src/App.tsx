@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.scss";
-import Instructions from "./instructions/Instructions";
+import Home from "./components/home/Home";
 
 export default function App() {
     return (
         <div className="trainheroic-code-test">
-            <Instructions />
+            <Home />
         </div>
     );
 }
