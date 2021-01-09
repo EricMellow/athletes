@@ -19,7 +19,7 @@ export default function Profile() {
     profilePhotoUrl: '',
     slug: '',
   }
-  let workoutsState: object = [];
+  let workoutsState: Array<object> = [];
 
   const [user, setUser] = useState(userState);
   useEffect(() => {
@@ -33,13 +33,19 @@ export default function Profile() {
   const [workouts, setWorkouts] = useState(workoutsState);
   useEffect(() => {
     async function getWorkoutsByID(id: number) {
-      const workouts = await getWorkoutsForUser(id);
+      const workouts = await getWorkoutsForUser(id).sort((a, b) => Date.parse(b.datetimeCompleted) - Date.parse(a.datetimeCompleted));;
       setWorkouts(workouts);
     }
     getWorkoutsByID(parseInt(id));
   }, [])
   
   console.log(workouts)
+  let lastFiveWorkouts = [];
+  for (let index = 0; index < 5; index++) {
+    lastFiveWorkouts.push(workouts[index])
+  }
+  console.log(lastFiveWorkouts)
+
 
   return (
 
