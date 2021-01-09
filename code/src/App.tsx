@@ -11,11 +11,11 @@ export default function App() {
     return (
         <div className="trainheroic-code-test">
             <Switch>
-                <Route path="/">
-                    <Home />
-                </Route>
                 <Route path="/athlete/:id">
                     <Profile />
+                </Route>
+                <Route path="/">
+                    <Home />
                 </Route>
             </Switch>
         </div>
