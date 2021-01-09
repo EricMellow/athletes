@@ -4,7 +4,7 @@ import getUsers from "../../api/getUsers";
 import Athletes from "../athletes/Athletes";
 
 
-class Home extends Component<{}, { athletes: Array<any> }> {
+class Home extends Component<{}, { athletes: Array<TrainHeroic.User> }> {
   constructor(props: object) {
     super(props);
     this.state = {
