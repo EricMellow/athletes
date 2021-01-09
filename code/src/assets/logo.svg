@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="89px" viewBox="0 0 90 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>TrainHeroic Logo</title>
+    <defs>
+        <linearGradient x1="100%" y1="-7.52637924%" x2="10.2039931%" y2="108.899836%" id="linearGradient-1">
+            <stop stop-color="#FBD918" offset="0%"></stop>
+            <stop stop-color="#F5B10A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Logos-/-TH-/-OrangeGradient" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="H-logo_NativeApp_Final-Copy-7" fill="url(#linearGradient-1)" points="60.2872405 5.68434189e-14 55.0481013 29.6668183 40.1914937 29.6668183 45.4306329 5.68434189e-14 15.7183291 5.68434189e-14 0 89 29.7127595 89 34.9523544 59.3331817 22.716 44.5 67.2849114 44.5 64.6646582 59.3331817 49.8085063 59.3331817 44.5689114 89 74.2816709 89 90 5.68434189e-14"></polygon>
+    </g>
+</svg>

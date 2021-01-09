@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "RefrigeratorDeluxe-Regular";
+    src: url(../assets/RefrigeratorDeluxe-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "RefrigeratorDeluxe-Heavy";
+    src: url(../assets/RefrigeratorDeluxe-Heavy.ttf) format("truetype");
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+$font-headline: "RefrigeratorDeluxe-Heavy";
+$font-sans: "Open Sans", sans-serif;
+
+body {
+    font-family: $font-sans;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-headline;
+    text-transform: uppercase;
+    color: $color-black;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.7em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+p {
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+a,
+a:visited {
+    color: $color-blue;
+    font-weight: bold;
+    text-decoration: none;
+}

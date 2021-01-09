@@ -1,0 +1,27 @@
+.trainheroic-code-test {
+    .instructions {
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .logo {
+            height: 10vh;
+            pointer-events: none;
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .wireframe {
+            width: 75vw;
+            margin-top: 30px;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}
