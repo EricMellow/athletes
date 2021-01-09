@@ -1,3 +1,4 @@
+import "./Athletes.scss"
 interface Athlete {
   id: number,
   nameFirst: string,
@@ -14,7 +15,7 @@ export default function Athletes({ athletes }: AthletesProps) {
     athleteCards = athletes.map(athlete => {
       return (
         <div key={athlete.id} className="athlete-card">
-          <img src={athlete.profilePhotoUrl} alt="Athlete profile"></img>
+          <img src={athlete.profilePhotoUrl} alt="Athlete profile" className="profile-picture"></img>
           <h3>{athlete.nameFirst} {athlete.nameLast}</h3>
         </div>
       );

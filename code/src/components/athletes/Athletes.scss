@@ -1,0 +1,33 @@
+.trainheroic-code-test {
+    .profile-picture {
+      border-radius: 100px;
+      height: 150px;
+    }
+
+    .athlete-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 60%;
+      margin: auto;
+    }
+
+    .athlete-card {
+      min-width: 250px;
+      text-align: center;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      .athlete-container {
+        width: 80%;
+      }
+    }
+
+    @media only screen and (max-width: 825px) {
+      .athlete-container {
+        width: 100%;
+      }
+    }
+}

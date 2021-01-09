@@ -3,15 +3,8 @@ import logo from "../../assets/logo.svg";
 import getUsers from "../../api/getUsers";
 import Athletes from "../athletes/Athletes";
 
-interface Athlete {
-  id: number,
-  nameFirst: string,
-  nameLast: string,
-  profilePhotoUrl: string,
-  slug: string
-};
 
-class Home extends Component<{}, { athletes: Array<Athlete> }> {
+class Home extends Component<{}, { athletes: Array<any> }> {
   constructor(props: object) {
     super(props);
     this.state = {
@@ -28,7 +21,6 @@ class Home extends Component<{}, { athletes: Array<Athlete> }> {
     this.setState({
       athletes
     });
-    console.log(athletes)
   }
 
   render() {
@@ -36,6 +28,7 @@ class Home extends Component<{}, { athletes: Array<Athlete> }> {
       <div className="home">
         <div className="body">
           <img src={logo} className="logo" alt="TrainHeroic Logo" />
+          <h1>My Athletes</h1>
           <Athletes athletes={this.state.athletes} />
         </div>
       </div>
