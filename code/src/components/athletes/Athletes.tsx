@@ -1,13 +1,6 @@
 import "./Athletes.scss"
-interface Athlete {
-  id: number,
-  nameFirst: string,
-  nameLast: string,
-  profilePhotoUrl: string,
-  slug: string
-};
 
-type AthletesProps = { athletes: Array<Athlete> };
+type AthletesProps = { athletes: Array<TrainHeroic.User> };
 
 export default function Athletes({ athletes }: AthletesProps) {
   let athleteCards: Array<object> = [];
