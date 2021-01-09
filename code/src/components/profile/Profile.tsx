@@ -1,28 +1,50 @@
-import React, { Component } from 'react';
 import "./Profile.scss"
+import getUser from "../../api/getUser"
+import getWorkoutsForUser from "../../api/getWorkoutsForUser"
+import {
+  useParams
+} from "react-router-dom";
+import { useState, useEffect } from 'react';
 
-
-class Profile extends Component<{}, { workouts: Array<any> }> {
-  constructor(props: object) {
-    super(props);
-    this.state = {
-      workouts: [],
-    };
-  }
-
-  componentDidMount() {
-  }
-
-  render() {
-    return (
-      <div className="athlete">
-        <div className="body">
-          <h1>This is an athlete page!</h1>
-        </div>
-      </div>
-    );
-  }
-
+interface RouteParams {
+  id: string
 }
 
-export default Profile;
+export default function Profile() {
+  let { id }: RouteParams = useParams(); 
+  let userState = {
+    nameFirst: '',
+    nameLast: '',
+    id: 0,
+    profilePhotoUrl: '',
+    slug: '',
+  }
+  let workoutsState: object = [];
+
+  const [user, setUser] = useState(userState);
+  useEffect(() => {
+    async function getUserByID(id: number) {
+      const user = await getUser(id);;
+      setUser(user!);
+    }
+    getUserByID(parseInt(id));
+  }, [])
+
+  const [workouts, setWorkouts] = useState(workoutsState);
+  useEffect(() => {
+    async function getWorkoutsByID(id: number) {
+      const workouts = await getWorkoutsForUser(id);
+      setWorkouts(workouts);
+    }
+    getWorkoutsByID(parseInt(id));
+  }, [])
+  
+  console.log(workouts)
+
+  return (
+
+    <div className="athlete-container">
+      This is an athlete profile
+    </div>
+  );
+}
