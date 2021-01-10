@@ -29,6 +29,8 @@ class Workout extends Component<WorkoutProps, WorkoutState> {
    let exercises = this.props.workout.blocks.map(async block => await getExercise(block.exerciseId))
    return Promise.all(exercises)
   }
+
+  render() {
     if (this.state.exercises[0].id !== 0) {
       let { workout } = this.props;
       let tableRows = workout.blocks.map((block, i) => {
@@ -45,12 +47,29 @@ class Workout extends Component<WorkoutProps, WorkoutState> {
         })
         return sets
       })
-  return (
-    <div className="workout-container">
-      I'm a workout
-    </div>
-  );
-}
+
+      return (
+        <div className="workout-container">
+          <h3>{this.formatter.format(new Date(workout.datetimeCompleted))} - {new Date(workout.datetimeCompleted).toLocaleTimeString()}</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Exercise</th>
+                <th>Set Number</th>
+                <th>Reps</th>
+                <th>Weight</th>
+                <th>TotalWeight</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableRows}
+            </tbody>
+          </table>
+        </div>
+      );
+    } else {
+      return (<div>Loading exercises...</div>)
+    }
   }
 
 }
