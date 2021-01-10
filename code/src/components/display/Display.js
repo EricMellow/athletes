@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import "./Display.scss"
+import React, { Component } from 'react';
+import "./Display.scss";
 import Chart from "chart.js";
-import getTotalWeightByDate from "../../api/getTotalWeightByDateForUser"
-import getTotalRepsByDate from "../../api/getTotalRepsByDateForUser"
+import getTotalWeightByDate from "../../api/getTotalWeightByDateForUser";
+import getTotalRepsByDate from "../../api/getTotalRepsByDateForUser";
 
 export default class Display extends Component {
   constructor(props) {
@@ -15,25 +15,24 @@ export default class Display extends Component {
 
   async componentDidMount() {
     if (this.props.type === 'Weight') {
-      let weights = await getTotalWeightByDate(this.props.id)
+      let weights = await getTotalWeightByDate(this.props.id);
       this.setState({
         data: weights
-      })
+      });
     } else if (this.props.type === 'Reps') {
-      let reps = await getTotalRepsByDate(this.props.id)
+      let reps = await getTotalRepsByDate(this.props.id);
       this.setState({
         data: reps
-      })
+      });
     }
-    let labels = Object.keys(this.state.data).reverse().slice(0, 10)
-    let data = Object.values(this.state.data).reverse().slice(0, 10)
+    let labels = Object.keys(this.state.data).reverse().slice(0, 10);
+    let data = Object.values(this.state.data).reverse().slice(0, 10);
     
     const myChartRef = this.chartRef.current.getContext("2d");
 
     new Chart(myChartRef, {
       type: "bar",
       data: {
-        //Bring in data
         labels: labels,
         datasets: [
           {
@@ -48,10 +47,10 @@ export default class Display extends Component {
     });
   }
   render() {
-    let vals = Object.values(this.state.data).reverse().slice(0, 10)
+    let vals = Object.values(this.state.data).reverse().slice(0, 10);
     let totalDataValue = vals.reduce((total, value) => {
-      return total += value
-    }, 0)
+      return total += value;
+    }, 0);
     return (
       <div className="graph-container">
         <div className="totals">

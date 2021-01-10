@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Athletes.scss"
+import "./Athletes.scss";
 
 type AthletesProps = { athletes: Array<TrainHeroic.User> };
 
