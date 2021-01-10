@@ -30,24 +30,30 @@ class Workout extends Component<WorkoutProps, WorkoutState> {
    return Promise.all(exercises)
   }
 
+  getTableRows = () => {
+    let { workout } = this.props;
+    let tableRows = workout.blocks.map((block, i) => {
+      let sets = block.sets.map((set, ii) => {
+        let key = Date.now();
+        return (
+          <tr key={key * ii}>
+            <td>{this.state.exercises[i]!.title}</td>
+            <td>{ii + 1}</td>
+            <td>{set.reps}</td>
+            <td>{set.weight || 0}</td>
+            <td>{set.reps * (set.weight || 0)}</td>
+          </tr>
+        )
+      })
+      return sets;
+    })
+    return tableRows;
+  }
+
   render() {
     if (this.state.exercises[0].id !== 0) {
       let { workout } = this.props;
-      let tableRows = workout.blocks.map((block, i) => {
-        let sets = block.sets.map((set, ii) => {
-          let key = Date.now();
-          return (
-            <tr key={key * ii}>
-              <td>{this.state.exercises[i]!.title}</td>
-              <td>{ii + 1}</td>
-              <td>{set.reps}</td>
-              <td>{set.weight || 0}</td>
-              <td>{set.reps * (set.weight || 0)}</td>
-            </tr>
-          )
-        })
-        return sets
-      })
+      let tableRows = this.getTableRows()
 
       return (
         <div className="workout">
