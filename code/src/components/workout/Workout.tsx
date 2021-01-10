@@ -1,9 +1,16 @@
-import "./Workout.scss"
+import "./Workout.scss";
+import getExercise from "../../api/getExercise";
+import React, { Component } from 'react';
 
 type WorkoutProps = { workout: TrainHeroic.Workout };
+type WorkoutState = {
+  exercises: Array<any>
+}
 
-export default function Workout({ workout }: WorkoutProps) {
-  console.log(workout)
+class Workout extends Component<WorkoutProps, WorkoutState> {
+  state: WorkoutState = {
+    exercises: [{id: 0, title: ''}],
+  };
 
   return (
     <div className="workout-container">
@@ -11,3 +18,8 @@ export default function Workout({ workout }: WorkoutProps) {
     </div>
   );
 }
+  }
+
+}
+
+export default Workout;
