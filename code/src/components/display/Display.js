@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import "./BarGraph.scss"
+import "./Display.scss"
 import Chart from "chart.js";
 import getTotalWeightByDate from "../../api/getTotalWeightByDateForUser"
 import getTotalRepsByDate from "../../api/getTotalRepsByDateForUser"
 
-export default class BarGraph extends Component {
+export default class Display extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,7 +55,7 @@ export default class BarGraph extends Component {
     return (
       <div className="graph-container">
         <div className="totals">
-          <h1 className="total-text">{totalDataValue}</h1>
+          <h1 className="total-text">{totalDataValue.toLocaleString()}</h1>
           {this.props.type === "Weight" && <h1 className="total-text">Pounds Lifted</h1>}
           {this.props.type === "Reps" && <h1 className="total-text">Reps</h1>}
         </div>

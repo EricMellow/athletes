@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Workout from "../workout/Workout";
-import BarGraph from "../barGraph/BarGraph"
+import Display from "../display/Display";
 
 interface RouteParams {
   id: string
@@ -66,8 +66,8 @@ export default function Profile() {
           <h3>{user.nameFirst} {user.nameLast}</h3>
         </header>
         <section className="graphs">
-          <BarGraph type={'Weight'} id={parseInt(id)}/>
-          <BarGraph type={'Reps'} id={parseInt(id)} />
+          <Display type={'Weight'} id={parseInt(id)}/>
+          <Display type={'Reps'} id={parseInt(id)} />
         </section>
         <section className="workouts-container">
           {displayedWorkouts}
