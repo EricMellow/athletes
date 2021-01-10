@@ -35,8 +35,9 @@ class Workout extends Component<WorkoutProps, WorkoutState> {
       let { workout } = this.props;
       let tableRows = workout.blocks.map((block, i) => {
         let sets = block.sets.map((set, ii) => {
+          let key = Date.now();
           return (
-            <tr key={block.exerciseId + ii}>
+            <tr key={key * ii}>
               <td>{this.state.exercises[i]!.title}</td>
               <td>{ii + 1}</td>
               <td>{set.reps}</td>
