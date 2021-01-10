@@ -47,9 +47,9 @@ export default function Profile() {
 
   let displayedWorkouts: Array<object> = [];
   if (lastFiveWorkouts.length) {
-    displayedWorkouts = lastFiveWorkouts.map(workout => {
+    displayedWorkouts = lastFiveWorkouts.map((workout, index) => {
       return (
-        <Workout workout={workout} />
+        <Workout workout={workout} key={index}/>
       )
     })
   }
@@ -57,11 +57,14 @@ export default function Profile() {
   
 
   if (!workouts.length || !lastFiveWorkouts.length || !displayedWorkouts.length) {
-    return ( <div>LOADING...</div> )
+    return ( <h1>LOADING...</h1> )
   } else {
     return (
-      <div className="athlete-container">
-        <header></header>
+      <div className="profile-container">
+        <header className="athlete-profile">
+          <img src={user.profilePhotoUrl} alt="Athlete profile" className="profile-picture"></img>
+          <h3>{user.nameFirst} {user.nameLast}</h3>
+        </header>
         <section className="graphs">
           <BarGraph type={'Weight'} id={parseInt(id)}/>
           <BarGraph type={'Reps'} id={parseInt(id)} />
