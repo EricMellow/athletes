@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Workout from "../workout/Workout";
+import BarGraph from "../barGraph/BarGraph"
 
 interface RouteParams {
   id: string
@@ -61,7 +62,10 @@ export default function Profile() {
     return (
       <div className="athlete-container">
         <header></header>
-        <section></section>
+        <section>
+          <BarGraph type={'Weight'} id={parseInt(id)}/>
+          <BarGraph type={'Reps'} id={parseInt(id)} />
+        </section>
         <section>
           {displayedWorkouts}
         </section>
