@@ -1,5 +1,46 @@
 .trainheroic-code-test {
     .graph-container {
       margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chart {
+      width: 80% !important;
+    }
+
+    .totals {
+      width: 20%;
+      margin-right: 35px;
+    }
+
+    @media only screen and (max-width: 825px) {
+      .graph-container {
+      flex-direction: column;
+      }
+
+      .totals {
+        font-size: 12px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+
+      .total-text {
+        margin: 0 10px 0 10px;
+      }
+
+      .chart {
+        width: 95% !important;
+      }
+    }
+
+    @media only screen and (max-width: 495px) {
+      .totals {
+        font-size: 8px;
+      }
     }
 }
