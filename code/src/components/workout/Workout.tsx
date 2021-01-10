@@ -19,6 +19,12 @@ class Workout extends Component<WorkoutProps, WorkoutState> {
     })
   }
 
+  formatter = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
   getExercises = () => {
    let exercises = this.props.workout.blocks.map(async block => await getExercise(block.exerciseId))
    return Promise.all(exercises)
