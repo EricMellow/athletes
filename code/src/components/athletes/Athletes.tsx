@@ -13,7 +13,6 @@ export default function Athletes({ athletes }: AthletesProps) {
             <img src={athlete.profilePhotoUrl} alt="Athlete profile" className="profile-picture"></img>
             <h3>{athlete.nameFirst} {athlete.nameLast}</h3>
           </Link>
-          
         </div>
       );
     });
