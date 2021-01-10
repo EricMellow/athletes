@@ -49,9 +49,9 @@ class Workout extends Component<WorkoutProps, WorkoutState> {
       })
 
       return (
-        <div className="workout-container">
+        <div className="workout">
           <h3>{this.formatter.format(new Date(workout.datetimeCompleted))} - {new Date(workout.datetimeCompleted).toLocaleTimeString()}</h3>
-          <table>
+          <table className="workout-table">
             <thead>
               <tr>
                 <th>Exercise</th>
