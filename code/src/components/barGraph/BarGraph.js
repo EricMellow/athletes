@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./BarGraph.scss"
 import Chart from "chart.js";
 import getTotalWeightByDate from "../../api/getTotalWeightByDateForUser"
 import getTotalRepsByDate from "../../api/getTotalRepsByDateForUser"
@@ -25,13 +26,14 @@ export default class BarGraph extends Component {
         data: reps
       })
     }
-    let labels = Object.keys(this.state.data)
-    let data = Object.values(this.state.data)
+    let labels = Object.keys(this.state.data).reverse().slice(0, 10)
+    let data = Object.values(this.state.data).reverse().slice(0, 10)
 
+    
     const myChartRef = this.chartRef.current.getContext("2d");
 
     new Chart(myChartRef, {
-      type: "line",
+      type: "bar",
       data: {
         //Bring in data
         labels: labels,
@@ -39,17 +41,17 @@ export default class BarGraph extends Component {
           {
             label: this.props.type,
             data: data,
+            backgroundColor: "#F5B10A"
           }
         ]
       },
       options: {
-        //Customize chart options
       }
     });
   }
   render() {
     return (
-      <div >
+      <div className="graph-container">
         <canvas
           id="myChart"
           ref={this.chartRef}
