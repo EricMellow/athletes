@@ -12,6 +12,17 @@ class Workout extends Component<WorkoutProps, WorkoutState> {
     exercises: [{id: 0, title: ''}],
   };
 
+  async componentDidMount() {
+    let exercises = await this.getExercises();
+    this.setState({
+      exercises: exercises
+    })
+  }
+
+  getExercises = () => {
+   let exercises = this.props.workout.blocks.map(async block => await getExercise(block.exerciseId))
+   return Promise.all(exercises)
+  }
   return (
     <div className="workout-container">
       I'm a workout
