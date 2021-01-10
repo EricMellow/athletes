@@ -5,6 +5,7 @@ import {
   useParams
 } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import Workout from "../workout/Workout";
 
 interface RouteParams {
   id: string
@@ -52,12 +53,19 @@ export default function Profile() {
     })
   }
   
+  
 
-
-  return (
-
-    <div className="athlete-container">
-      This is an athlete profile
-    </div>
-  );
+  if (!workouts.length || !lastFiveWorkouts.length || !displayedWorkouts.length) {
+    return ( <div>LOADING...</div> )
+  } else {
+    return (
+      <div className="athlete-container">
+        <header></header>
+        <section></section>
+        <section>
+          {displayedWorkouts}
+        </section>
+      </div>
+    );
+  }
 }
