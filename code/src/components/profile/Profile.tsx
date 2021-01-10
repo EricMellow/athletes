@@ -62,11 +62,11 @@ export default function Profile() {
     return (
       <div className="athlete-container">
         <header></header>
-        <section>
+        <section className="graphs">
           <BarGraph type={'Weight'} id={parseInt(id)}/>
           <BarGraph type={'Reps'} id={parseInt(id)} />
         </section>
-        <section>
+        <section className="workouts-container">
           {displayedWorkouts}
         </section>
       </div>
