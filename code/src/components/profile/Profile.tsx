@@ -1,9 +1,7 @@
-import "./Profile.scss"
-import getUser from "../../api/getUser"
-import getWorkoutsForUser from "../../api/getWorkoutsForUser"
-import {
-  useParams
-} from "react-router-dom";
+import "./Profile.scss";
+import getUser from "../../api/getUser";
+import getWorkoutsForUser from "../../api/getWorkoutsForUser";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import Workout from "../workout/Workout";
 import Display from "../display/Display";
@@ -14,15 +12,14 @@ interface RouteParams {
 
 export default function Profile() {
   let { id }: RouteParams = useParams(); 
+
   let userState = {
     nameFirst: '',
     nameLast: '',
     id: 0,
     profilePhotoUrl: '',
     slug: '',
-  }
-  let workoutsState: Array<object> = [];
-
+  };
   const [user, setUser] = useState(userState);
   useEffect(() => {
     async function getUserByID(id: number) {
@@ -30,8 +27,9 @@ export default function Profile() {
       setUser(user!);
     }
     getUserByID(parseInt(id));
-  }, [])
+  }, []);
 
+  let workoutsState: Array<object> = [];
   const [workouts, setWorkouts] = useState(workoutsState);
   useEffect(() => {
     async function getWorkoutsByID(id: number) {
@@ -39,7 +37,7 @@ export default function Profile() {
       setWorkouts(workouts);
     }
     getWorkoutsByID(parseInt(id));
-  }, [])
+  }, []);
   
   let lastFiveWorkouts: Array<any> = workouts.filter((workout, index) => { 
     return index < 5}
