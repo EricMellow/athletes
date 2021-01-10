@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 
 export default function Nav() {
   let location = useLocation();
-  console.log(location)
 
   if (location.pathname !== "/") {
     return (
