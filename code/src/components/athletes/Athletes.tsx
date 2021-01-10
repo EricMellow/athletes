@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Athletes.scss"
 
 type AthletesProps = { athletes: Array<TrainHeroic.User> };
@@ -8,8 +9,11 @@ export default function Athletes({ athletes }: AthletesProps) {
     athleteCards = athletes.map(athlete => {
       return (
         <div key={athlete.id} className="athlete-card">
-          <img src={athlete.profilePhotoUrl} alt="Athlete profile" className="profile-picture"></img>
-          <h3>{athlete.nameFirst} {athlete.nameLast}</h3>
+          <Link to={`/athlete/${athlete.id}`}>
+            <img src={athlete.profilePhotoUrl} alt="Athlete profile" className="profile-picture"></img>
+            <h3>{athlete.nameFirst} {athlete.nameLast}</h3>
+          </Link>
+          
         </div>
       );
     });
