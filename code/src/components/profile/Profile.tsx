@@ -39,12 +39,19 @@ export default function Profile() {
     getWorkoutsByID(parseInt(id));
   }, [])
   
-  console.log(workouts)
-  let lastFiveWorkouts = [];
-  for (let index = 0; index < 5; index++) {
-    lastFiveWorkouts.push(workouts[index])
+  let lastFiveWorkouts: Array<any> = workouts.filter((workout, index) => { 
+    return index < 5}
+  )
+
+  let displayedWorkouts: Array<object> = [];
+  if (lastFiveWorkouts.length) {
+    displayedWorkouts = lastFiveWorkouts.map(workout => {
+      return (
+        <Workout workout={workout} />
+      )
+    })
   }
-  console.log(lastFiveWorkouts)
+  
 
 
   return (
