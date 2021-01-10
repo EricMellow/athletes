@@ -24,7 +24,7 @@ export default function Profile() {
   const [user, setUser] = useState(userState);
   useEffect(() => {
     async function getUserByID(id: number) {
-      const user = await getUser(id);;
+      const user = await getUser(id);
       setUser(user!);
     }
     getUserByID(parseInt(id));
@@ -33,7 +33,7 @@ export default function Profile() {
   const [workouts, setWorkouts] = useState(workoutsState);
   useEffect(() => {
     async function getWorkoutsByID(id: number) {
-      const workouts = await getWorkoutsForUser(id).sort((a, b) => Date.parse(b.datetimeCompleted) - Date.parse(a.datetimeCompleted));;
+      const workouts: Array<TrainHeroic.Workout> = await getWorkoutsForUser(id).sort((a, b) => Date.parse(b.datetimeCompleted) - Date.parse(a.datetimeCompleted));
       setWorkouts(workouts);
     }
     getWorkoutsByID(parseInt(id));
