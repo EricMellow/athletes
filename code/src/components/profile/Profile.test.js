@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './Nav';
+import Profile from './Profile';
 import { shallow } from 'enzyme';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -8,20 +8,21 @@ Enzyme.configure({ adapter: new Adapter() });
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
-  useLocation: () => ({
-    pathname: "localhost:3000/"
+  useParams: () => ({
+    pathname: "localhost:3000/athlete/15321"
   })
 }));
 
-describe('Nav', () => {
+describe('Profile', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Nav />);
+    wrapper = shallow(<Profile />);
   });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+    
 });
