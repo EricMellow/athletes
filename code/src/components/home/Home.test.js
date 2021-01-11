@@ -8,7 +8,7 @@ import * as getUsers from '../../api/getUsers';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('App', () => {
+describe('Home', () => {
   let wrapper;
 
   beforeEach(() => {

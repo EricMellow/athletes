@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Athletes should match the snapshot with athlete props 1`] = `ShallowWrapper {}`;
+
+exports[`Athletes should match the snapshot without athlete props 1`] = `ShallowWrapper {}`;
