@@ -1,6 +1,5 @@
 WELCOME
 =======
-Welcome to the TrainHeroic Front End Code Test!
 
 We want you to build a small application with two screens (see design-assets folder):
 1. Home - Displays athletes with links to each athlete's profile
