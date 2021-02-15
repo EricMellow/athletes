@@ -8,7 +8,7 @@ export default function Instructions() {
             <div className="body">
                 <img src={logo} className="logo" alt="TrainHeroic Logo" />
                 <h1>
-                    Welcome to the TrainHeroic<br />front-end code test!
+                    Welcome to the REDACTED<br />front-end code test!
                 </h1>
                 <p>
                     Below are the two screens to implement.
